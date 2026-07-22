@@ -1,2 +1,36 @@
 //CODE HERE!!
-//NAMES: 
+class Solution {
+    public void sortColors(int[] nums) {
+        int n = nums.length;
+        int blueFreq = 0;
+        int redFreq = 0;
+        int whiteFreq = 0;
+
+        //get the frequencies of each item
+        for (int num : nums){
+            if (num == 0) redFreq++;
+            else if (num == 1) whiteFreq++;
+            else blueFreq++;
+        }
+
+        int i = 0;
+        while (redFreq != 0){
+            nums[i] = 0;
+            i++;
+            redFreq--;
+        }
+
+        while (whiteFreq != 0){
+            nums[i] = 1;
+            i++;
+            whiteFreq--;
+        }
+
+        while (blueFreq != 0){
+            nums[i] = 2;
+            i++;
+            blueFreq--;
+        }
+    }
+}
+//NAMES: Dwann Williams
